@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://207.154.220.1:3306/zoo</property>
+        <property name="hibernate.connection.username">nick</property>
+        <property name="hibernate.connection.password">fakepassword1</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <mapping class="com.hibernate.annotations.zoo.Cage"/>
+        <mapping class="com.hibernate.annotations.zoo.Animal"/>
+        <mapping class="com.hibernate.annotations.zoo.Overseer"/>
+
+    </session-factory>
+</hibernate-configuration>

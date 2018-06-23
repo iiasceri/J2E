@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.hibernate.hbm.univesity.Groups" table="students_group">
+        <id column="group_id" name="id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property column="group_name" name="name" type="java.lang.String"/>
+
+        <property name="faculty" column="faculty">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.hibernate.hbm.univesity.Faculty</param>
+                <!--<param name="useNamed">true</param>-->
+                <param name="type">12</param>
+            </type>
+        </property>
+
+        <set name="students">
+            <key column="student_group"/>
+            <one-to-many class="com.hibernate.hbm.univesity.Students"/>
+        </set>
+
+        <set name="professors" table="lecture">
+            <key column="students_group"/>
+            <many-to-many class="com.hibernate.hbm.univesity.Professors" column="professor"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hibernate.hbm.zoo.Animal" table="animal">
+        <id column="animal_id" name="id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+
+        <property column="animal_name" name="name" type="java.lang.String"/>
+
+        <many-to-one name ="cage" column = "cage" class="com.hibernate.hbm.zoo.Cage"/>
+
+        
+    </class>
+</hibernate-mapping>

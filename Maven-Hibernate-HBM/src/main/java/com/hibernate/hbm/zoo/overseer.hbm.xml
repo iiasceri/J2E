@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hibernate.hbm.zoo.Overseer" table="overseer">
+        <id column="overseer_id" name="id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property column="overseer_name" name="name" type="java.lang.String"/>
+
+        <property column="overseer_experience" name="experience" type="java.lang.Integer"/>
+
+        <set name="cages" table="check">
+            <key column="overseer"/>
+            <many-to-many class="com.hibernate.hbm.zoo.Cage" column="cage"/>
+        </set>
+    </class>
+</hibernate-mapping>
