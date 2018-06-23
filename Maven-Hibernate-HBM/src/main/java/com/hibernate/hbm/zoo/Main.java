@@ -67,9 +67,9 @@ public class Main {
         overseerDAO.addOverseer(overseerAdd);
         Main.printAllOverseers();
 
-        Overseer professorUpdate = overseerDAO.getOverseerById(1);
-        professorUpdate.setName("Tarzan");
-        overseerDAO.updateOverseer(professorUpdate);
+        Overseer overseerUpdate = overseerDAO.getOverseerById(1);
+        overseerUpdate.setName("Tarzan");
+        overseerDAO.updateOverseer(overseerUpdate);
         Main.printAllOverseers();
 
         overseerDAO.deleteOverseer(overseerDAO.getOverseerById(4));
